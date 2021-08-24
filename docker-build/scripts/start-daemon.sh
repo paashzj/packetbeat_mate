@@ -1,4 +1,4 @@
 #!/bin/bash
 
 
-nohup $METRICBEAT_HOME/mate/packetbeat_mate >$METRICBEAT_HOME/packetbeat_mate.stdout.log 2>$METRICBEAT_HOME/packetbeat_mate.stderr.log
+nohup $PACKETBEAT_HOME/mate/packetbeat_mate >$PACKETBEAT_HOME/packetbeat_mate.stdout.log 2>$PACKETBEAT_HOME/packetbeat_mate.stderr.log
