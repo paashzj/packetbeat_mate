@@ -1,6 +1,7 @@
 package pb
 
 import (
+	"github.com/paashzj/gutil"
 	"go.uber.org/zap"
 	"packetbeat_mate/pkg/path"
 	"packetbeat_mate/pkg/util"
@@ -16,8 +17,9 @@ func startPb() {
 		util.Logger().Error("generate prom config file failed ", zap.Error(err))
 		return
 	}
-	err = util.CallScript(path.PbStartScript)
-	util.Logger().Error("run start prom scripts failed ", zap.Error(err))
+	stdout, stderr, err := gutil.CallScript(path.PbStartScript)
+	util.Logger().Info("output is ", zap.String("stdout", stdout), zap.String("stderr", stderr))
+	util.Logger().Error("run start coredns scripts failed ", zap.Error(err))
 }
 
 func generatePbFile() (err error) {
